@@ -1,0 +1,27 @@
+.no-videos-const {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.no-videos-const img {
+  width: 400px;
+}
+.no-videos-const h1 {
+  margin: 20px 0px;
+}
+.height100vh {
+  height: 100vh;
+}
+@media (max-width: 768px) {
+  .no-videos-const img {
+    width: 180px;
+  }
+  .no-videos-const h1 {
+    font-size: small;
+  }
+  .no-videos-const p {
+    font-size: small;
+  }
+}

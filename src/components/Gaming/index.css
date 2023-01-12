@@ -1,0 +1,26 @@
+.gaming-videos {
+  margin: 20px 0px;
+}
+
+.game-list-ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 0;
+}
+.game-list-ul li {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 20px;
+}
+.game-list-ul li img {
+  width: 200px;
+}
+.g-title {
+  margin: 10px 0px;
+  font-size: x-large;
+  font-weight: 700;
+}
+.view-count {
+  font-size: small;
+}

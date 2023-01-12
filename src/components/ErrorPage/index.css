@@ -1,0 +1,34 @@
+.error-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-page img {
+  width: 400px;
+}
+.error-page p {
+  text-align: center;
+  line-height: 30px;
+  font-size: medium;
+  margin: 10px 0px;
+  font-weight: 800;
+}
+.error-page h1 {
+  margin: 10px 0px;
+  font-size: xx-large;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .error-page img {
+    width: 180px;
+  }
+  .error-page h1 {
+    font-size: medium;
+  }
+  .error-page p {
+    font-size: small;
+    padding: 10px;
+  }
+}

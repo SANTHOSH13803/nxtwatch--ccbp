@@ -1,0 +1,128 @@
+* {
+  font-family: 'Roboto';
+}
+.video-item-details-container {
+  width: 100%;
+  min-height: 100vh;
+}
+.player-container {
+  height: 500px;
+  /* padding: 20px; */
+  /* margin-top: 20px; */
+  margin-bottom: 10px;
+  /* background-color: orange; */
+}
+.video-player {
+  height: 500px;
+  width: 100px;
+}
+.player-item-details {
+  padding: 20px;
+}
+.l p {
+  font-size: 12px;
+  /* margin-top: 20px; */
+}
+.loader-container-player {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.likes-views-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 2rem;
+}
+.like-share {
+  display: flex;
+  align-items: center;
+}
+.like-share button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50px;
+  margin-right: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+.like-share svg {
+  font-size: 20px;
+}
+.hr-pv {
+  margin: 20px 0px;
+  height: 2px;
+  background-color: rgb(187, 185, 185);
+  border: none;
+}
+.player-title {
+  line-height: 20px;
+  font-size: large;
+  font-weight: bold;
+}
+.player-channel-logo {
+  width: 50px;
+  align-self: center;
+}
+.bolder {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+.channel-details {
+  margin-left: 20px;
+}
+.subs {
+  font-size: small;
+  margin-top: 12px;
+}
+.video-description {
+  font-size: 14px;
+  margin-top: 20px;
+  line-height: 24px;
+}
+.saved-span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .player-container {
+    padding: 0;
+    height: 50vh;
+    margin: 20px 0px;
+  }
+  .saved-span {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+  }
+
+  .player-item-details {
+    padding: 10px;
+  }
+  .like-share button {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 20px;
+    /* background-color: aqua; */
+    width: 60px;
+  }
+  .like-share {
+    margin-top: 10px;
+  }
+
+  .l {
+    margin-top: 10px;
+  }
+}

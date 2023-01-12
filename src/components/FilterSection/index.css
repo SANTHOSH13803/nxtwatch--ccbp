@@ -1,0 +1,58 @@
+.contact-section {
+  margin-left: 20px;
+}
+.contact-section h1 {
+  font-size: 16px;
+}
+.contact-section ul {
+  display: flex;
+  padding: 0;
+  margin: 20px 0px;
+}
+.contact-section ul li {
+  margin-right: 10px;
+  list-style: none;
+}
+.contact-section ul li img {
+  width: 30px;
+}
+.contact-section p {
+  width: 200px;
+  line-height: 25px;
+  margin-bottom: 20px;
+}
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 280px;
+  margin-top: 0;
+  justify-content: space-between;
+  height: 100vh;
+}
+.filter-top {
+  /* width: 200px; */
+  padding: 0;
+  width: 100%;
+  margin: 0;
+}
+.filter-top li {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding-left: 20px;
+  width: 100%;
+  /* line-height: 35px; */
+  height: 50px;
+}
+.filter-icon {
+  font-size: 20px;
+}
+.filter-top li p {
+  margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+  .filter-container {
+    display: none;
+  }
+}

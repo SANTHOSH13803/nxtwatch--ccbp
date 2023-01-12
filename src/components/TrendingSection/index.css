@@ -1,0 +1,32 @@
+.width-100 {
+  width: 100%;
+}
+.h-heading {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+.error-page-button-align {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  min-height: 100vh;
+}
+.custom-icon {
+  /* background-color: black; */
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.red-icon {
+  color: #ff0000;
+  font-size: 25px;
+}
+.h-heading h1 {
+  margin-left: 20px;
+}
