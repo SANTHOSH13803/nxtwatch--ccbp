@@ -144,19 +144,13 @@ class GamingSection extends Component {
         {value => {
           const {isDarkMode} = value
           return (
-            <>
+            <VideoList isDark={isDarkMode} data-testid="gaming">
               <Header />
               <div className="result-container">
                 <FilterSection activeTab="Gaming" />
-                <VideoList
-                  isDark={isDarkMode}
-                  className="width-100"
-                  data-testid="gaming"
-                >
-                  {this.renderResult()}
-                </VideoList>
+                <div className="width-100">{this.renderResult()}</div>
               </div>
-            </>
+            </VideoList>
           )
         }}
       </ThemeContext.Consumer>

@@ -106,9 +106,7 @@ class TrendingSection extends Component {
               </CustomIcon>
               <h1>Trending</h1>
             </HeadingDiv>
-            <VideoList isDark={isDarkMode} data-testid="trending">
-              <VideosList details={trendingList} />
-            </VideoList>
+            <VideosList details={trendingList} />
           </>
         )
       }}
@@ -136,15 +134,13 @@ class TrendingSection extends Component {
         {value => {
           const {isDarkMode} = value
           return (
-            <>
+            <VideoList isDark={isDarkMode} data-testid="trending">
               <Header />
               <div className="result-container">
                 <FilterSection activeTab="Trending" />
-                <VideoList isDark={isDarkMode} className="width-100">
-                  {this.renderResult()}
-                </VideoList>
+                <div className="width-100">{this.renderResult()}</div>
               </div>
-            </>
+            </VideoList>
           )
         }}
       </ThemeContext.Consumer>

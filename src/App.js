@@ -8,7 +8,7 @@ import Home from './components/Home'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import ThemeContext from './Context/context'
 import {ChangeTheme} from './components/StyledComponents/styledComponents'
-import videoPlayDetails from './components/VideoItemDetails'
+import VideoPlayDetails from './components/VideoItemDetails'
 import TrendingSection from './components/TrendingSection'
 import GamingSection from './components/Gaming'
 import SavedVideos from './components/SavedVideos'
@@ -59,7 +59,7 @@ class App extends Component {
             <ProtectedRoute
               exact
               path="/videos/:id"
-              component={videoPlayDetails}
+              component={VideoPlayDetails}
             />
             <Route exact path="/bad-path" component={NotFound} />
             <Redirect to="/bad-path" />

@@ -23,6 +23,7 @@ class Home extends Component {
                 <ChangeThemeVideoSection
                   className="display-according-section"
                   isDark={isDarkMode}
+                  data-testid="home"
                 >
                   <HomeVideoSection />
                 </ChangeThemeVideoSection>

@@ -19,7 +19,7 @@ const StatusVariables = {
   failure: 'F',
   loading: 'L',
 }
-class videoPlayDetails extends Component {
+class VideoPlayDetails extends Component {
   state = {
     videoData: '',
     apiStatus: StatusVariables.initial,
@@ -255,4 +255,4 @@ class videoPlayDetails extends Component {
   }
 }
 
-export default videoPlayDetails
+export default VideoPlayDetails

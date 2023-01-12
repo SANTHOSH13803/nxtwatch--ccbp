@@ -6,11 +6,7 @@ import {AiOutlineSearch, AiOutlineClose} from 'react-icons/ai'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
 import ErrorPage from '../ErrorPage'
-import {
-  SearchBarInput,
-  SearchBar,
-  ChangeThemeVideoSection,
-} from '../StyledComponents/styledComponents'
+import {SearchBarInput, SearchBar} from '../StyledComponents/styledComponents'
 import ThemeContext from '../../Context/context'
 import './index.css'
 import VideoItem from '../VideoItem'
@@ -153,7 +149,7 @@ class HomeVideoSection extends Component {
         const {isDarkMode} = value
         const {searchInput, Banner} = this.state
         return (
-          <ChangeThemeVideoSection isDark={isDarkMode} data-testid="home">
+          <div>
             {Banner && this.renderBanner()}
             <div className="show-videos">
               <SearchBar className="search-bar-cont" isDark={isDarkMode}>
@@ -176,7 +172,7 @@ class HomeVideoSection extends Component {
               </SearchBar>
               {this.renderResult()}
             </div>
-          </ChangeThemeVideoSection>
+          </div>
         )
       }}
     </ThemeContext.Consumer>

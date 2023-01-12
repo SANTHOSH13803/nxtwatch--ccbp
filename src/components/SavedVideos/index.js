@@ -5,7 +5,6 @@ import {
   HeadingDiv,
   CustomIcon,
   VideoList,
-  NoVideosSaved,
 } from '../StyledComponents/styledComponents'
 import VideosList from '../VideosList'
 
@@ -15,21 +14,14 @@ import './index.css'
 
 const SavedVideos = () => {
   const NoVideosList = () => (
-    <ThemeContext.Consumer>
-      {value => {
-        const {isDarkMode} = value
-        return (
-          <NoVideosSaved isDark={isDarkMode} className="no-videos-const">
-            <img
-              src="https://assets.ccbp.in/frontend/react-js/nxt-watch-no-saved-videos-img.png"
-              alt="no videos"
-            />
-            <h1>No saved videos found</h1>
-            <p>You can save your videos while watching them</p>
-          </NoVideosSaved>
-        )
-      }}
-    </ThemeContext.Consumer>
+    <div className="no-videos-const">
+      <img
+        src="https://assets.ccbp.in/frontend/react-js/nxt-watch-no-saved-videos-img.png"
+        alt="no videos"
+      />
+      <h1>No saved videos found</h1>
+      <p>You can save your videos while watching them</p>
+    </div>
   )
 
   return (
@@ -39,15 +31,11 @@ const SavedVideos = () => {
         const condition = cartList.length > 0
 
         return (
-          <>
+          <VideoList isDark={isDarkMode} data-testid="savedVideos">
             <Header />
             <div className="result-container">
               <FilterSection activeTab="Saved Videos" />
-              <VideoList
-                isDark={isDarkMode}
-                className="width-100"
-                data-testid="savedVideos"
-              >
+              <VideoList isDark={isDarkMode} className="width-100">
                 {!condition ? (
                   NoVideosList()
                 ) : (
@@ -63,7 +51,7 @@ const SavedVideos = () => {
                 )}
               </VideoList>
             </div>
-          </>
+          </VideoList>
         )
       }}
     </ThemeContext.Consumer>
