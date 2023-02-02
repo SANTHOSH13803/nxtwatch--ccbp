@@ -6,7 +6,11 @@ import {AiOutlineSearch, AiOutlineClose} from 'react-icons/ai'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
 import ErrorPage from '../ErrorPage'
-import {SearchBarInput, SearchBar} from '../StyledComponents/styledComponents'
+import {
+  SearchBarInput,
+  SearchBar,
+  ChangeThemeVideoSection,
+} from '../StyledComponents/styledComponents'
 import ThemeContext from '../../Context/context'
 import './index.css'
 import VideoItem from '../VideoItem'
@@ -38,22 +42,33 @@ class HomeVideoSection extends Component {
   }
 
   renderBanner = () => (
-    <div className="banner-section" data-testid="banner">
-      <div className="place-close-btn">
-        <button
-          type="button"
-          onClick={this.onClickCloseBanner}
-          data-testid="close"
-        >
-          <AiOutlineClose className="close-btn-icon" />
-        </button>
-      </div>
-      <img src={lightThemeImage} alt="nxt watch logo" />
-      <p>Buy Nxt Watch Premium prepaid plans with UPI</p>
-      <button type="button" className="get-it-now-btn">
-        GET IT NOW
-      </button>
-    </div>
+    <ThemeContext.Consumer>
+      {value => {
+        const {isDarkMode} = value
+        return (
+          <ChangeThemeVideoSection
+            isDark={isDarkMode}
+            className="banner-section"
+            data-testid="banner"
+          >
+            <div className="place-close-btn">
+              <button
+                type="button"
+                onClick={this.onClickCloseBanner}
+                data-testid="close"
+              >
+                <AiOutlineClose className="close-btn-icon" />
+              </button>
+            </div>
+            <img src={lightThemeImage} alt="nxt watch logo" />
+            <p>Buy Nxt Watch Premium prepaid plans with UPI</p>
+            <button type="button" className="get-it-now-btn">
+              GET IT NOW
+            </button>
+          </ChangeThemeVideoSection>
+        )
+      }}
+    </ThemeContext.Consumer>
   )
 
   getVideos = async () => {
@@ -240,7 +255,18 @@ class HomeVideoSection extends Component {
   )
 
   render() {
-    return <>{this.showVideos()}</>
+    return (
+      <ThemeContext.Consumer>
+        {value => {
+          const {isDarkMode} = value
+          return (
+            <ChangeThemeVideoSection isDark={isDarkMode} data-testid="home">
+              {this.showVideos()}
+            </ChangeThemeVideoSection>
+          )
+        }}
+      </ThemeContext.Consumer>
+    )
   }
 }
 

@@ -1,4 +1,5 @@
 import {withRouter, Link} from 'react-router-dom'
+// import {Component} from 'react'
 import {IoMoon, IoSunnyOutline} from 'react-icons/io5'
 import Popup from 'reactjs-popup'
 import {FiLogOut} from 'react-icons/fi'
@@ -12,7 +13,7 @@ import {
 } from 'react-icons/ai'
 import {SiYoutubegaming} from 'react-icons/si'
 // import {Component} from 'react'
-import uuid from 'react-uuid'
+// import uuid from 'react-uuid'
 import {MdPlaylistAdd} from 'react-icons/md'
 import ThemeContext from '../../Context/context'
 import {
@@ -23,6 +24,7 @@ import {
   SvgIcon,
   CancelBtn,
   VideoList,
+  //   SideBar,
 } from '../StyledComponents/styledComponents'
 
 const filterIcons = [
@@ -59,9 +61,9 @@ const Header = props => {
         }
         return (
           <ul className="align-c">
-            <Link to="/" className="link" key={uuid()}>
+            <Link to="/" className="link" key="sjalsjdf">
               <ActiveItem
-                key={uuid()}
+                key="dfjahljfasl"
                 isActive={filterIcons[0].id === activeTab}
                 isDark={isDarkMode}
                 onClick={onClickHome}
@@ -82,9 +84,9 @@ const Header = props => {
                 </div>
               </ActiveItem>
             </Link>
-            <Link to="/trending" className="link" key={uuid()}>
+            <Link to="/trending" className="link" key="qeuyrwu">
               <ActiveItem
-                key={uuid()}
+                key="3870q80q"
                 isActive={filterIcons[1].id === activeTab}
                 isDark={isDarkMode}
                 onClick={onClickTrending}
@@ -105,44 +107,48 @@ const Header = props => {
                 </div>
               </ActiveItem>
             </Link>
-            <Link to="/gaming" className="link" key={uuid()}>
+            <Link to="/gaming" className="link" key="nxcvn,cv">
               <ActiveItem
-                key={uuid()}
+                key="ncxvnxv"
                 isActive={filterIcons[2].id === activeTab}
                 isDark={isDarkMode}
               >
-                <ActiveIcon
-                  isDark={isDarkMode}
-                  isActive={filterIcons[2].id === activeTab}
-                >
-                  <SiYoutubegaming className="filter-icon" />
-                </ActiveIcon>
-                <ActiveText
-                  isDark={isDarkMode}
-                  isActive={filterIcons[2].id === activeTab}
-                >
-                  {filterIcons[2].id}
-                </ActiveText>
+                <div className="specific-width">
+                  <ActiveIcon
+                    isDark={isDarkMode}
+                    isActive={filterIcons[2].id === activeTab}
+                  >
+                    <SiYoutubegaming className="filter-icon" />
+                  </ActiveIcon>
+                  <ActiveText
+                    isDark={isDarkMode}
+                    isActive={filterIcons[2].id === activeTab}
+                  >
+                    {filterIcons[2].id}
+                  </ActiveText>
+                </div>
               </ActiveItem>
             </Link>
-            <Link to="/saved-videos" className="link" key={uuid()}>
+            <Link to="/saved-videos" className="link" key="nbdfiush">
               <ActiveItem
-                key={uuid()}
+                key="eiuc,vn,nihfd"
                 isActive={filterIcons[3].id === activeTab}
                 isDark={isDarkMode}
               >
-                <ActiveIcon
-                  isDark={isDarkMode}
-                  isActive={filterIcons[3].id === activeTab}
-                >
-                  <MdPlaylistAdd className="filter-icon" />
-                </ActiveIcon>
-                <ActiveText
-                  isDark={isDarkMode}
-                  isActive={filterIcons[3].id === activeTab}
-                >
-                  {filterIcons[3].id}
-                </ActiveText>
+                <div className="specific-width">
+                  <ActiveIcon
+                    isDark={isDarkMode}
+                    isActive={filterIcons[3].id === activeTab}
+                  >
+                    <MdPlaylistAdd className="filter-icon" />
+                  </ActiveIcon>
+                  <ActiveText
+                    isDark={isDarkMode}
+                    isActive={filterIcons[3].id === activeTab}
+                  >
+                    {filterIcons[3].id}
+                  </ActiveText>
+                </div>
               </ActiveItem>
             </Link>
           </ul>
@@ -174,8 +180,8 @@ const Header = props => {
                   <img src={websiteLogo} alt="website logo" />
                 </button>
               </Link>
-              <div className="phone-icons" data-testid="theme">
-                <button type="button" onClick={toggleTheme}>
+              <div className="phone-icons">
+                <button type="button" onClick={toggleTheme} data-testid="theme">
                   {!isDarkMode ? (
                     <IoMoon className="header-icons" />
                   ) : (
@@ -183,8 +189,12 @@ const Header = props => {
                   )}
                 </button>
 
-                {/*  */}
-
+                {/* Menu */}
+                {/* <button type="button">
+                  <SvgIcon isDark={isDarkMode} onClick={onClickMenu}>
+                    <AiOutlineMenu className="header-icons" />
+                  </SvgIcon>
+                </button> */}
                 <Popup
                   modal
                   trigger={
@@ -196,15 +206,24 @@ const Header = props => {
                   }
                 >
                   {close => (
-                    <VideoList isDark={isDarkMode} className="filter">
-                      <button type="button" onClick={() => close()}>
-                        close
-                      </button>
-                      {filterTop()}
-                    </VideoList>
+                    <>
+                      <VideoList isDark={isDarkMode} className="filter">
+                        <div className="btn-cont">
+                          <button
+                            type="button"
+                            className="close-btn"
+                            onClick={() => close()}
+                          >
+                            <AiOutlineClose />
+                          </button>
+                        </div>
+                        <div className="ok">{filterTop()}</div>
+                      </VideoList>
+                    </>
                   )}
                 </Popup>
                 {/*  */}
+
                 <Popup
                   modal
                   trigger={
@@ -289,18 +308,26 @@ const Header = props => {
                 </Popup>
               </div>
               {/* <SideBar id="navbar" className="navbar-open" isDark={isDarkMode}>
-                <Link to="/" className="link">
-                  <p onClick={onClickMenu}>Home</p>
-                </Link>
-                <Link to="/trending" className="link">
-                  <p onClick={onClickMenu}>Trending</p>
-                </Link>
-                <Link to="/gaming" className="link">
-                  <p onClick={onClickMenu}>Gaming</p>
-                </Link>
-                <Link to="/saved-videos" className="link">
-                  <p onClick={onClickMenu}>Saved Videos</p>
-                </Link>
+                <p onClick={onClickMenu}>
+                  <Link to="/" className="link">
+                    Home
+                  </Link>
+                </p>
+                <p onClick={onClickMenu}>
+                  <Link to="/trending" className="link">
+                    Trending
+                  </Link>
+                </p>
+                <p onClick={onClickMenu}>
+                  <Link to="/gaming" className="link">
+                    Gaming
+                  </Link>
+                </p>
+                <p onClick={onClickMenu}>
+                  <Link to="/saved-videos" className="link">
+                    Saved Videos
+                  </Link>
+                </p>
               </SideBar> */}
             </nav>
           </ChangeTheme>

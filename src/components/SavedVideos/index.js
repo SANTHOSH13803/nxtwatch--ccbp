@@ -40,12 +40,17 @@ const SavedVideos = () => {
                   NoVideosList()
                 ) : (
                   <>
-                    <HeadingDiv isDark={isDarkMode} className="h-heading">
+                    <HeadingDiv
+                      isDark={isDarkMode}
+                      className="h-heading"
+                      data-testid="banner"
+                    >
                       <CustomIcon isDark={isDarkMode} className="custom-icon">
                         <AiFillFire className="red-icon" />
                       </CustomIcon>
                       <h1>Saved Videos</h1>
                     </HeadingDiv>
+
                     <VideosList details={cartList} />
                   </>
                 )}

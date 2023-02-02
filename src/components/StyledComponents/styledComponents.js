@@ -3,34 +3,34 @@ import Styled from 'styled-components'
 export const ChangeTheme = Styled.div`
 background-color: ${props => (props.isDark ? '#212121' : '#ffffff')} ;
 color:${props => (!props.isDark ? '#0f0f0f ' : ' #f9f9f9 ')} ;
-transition: 1s;
+// transition: 1s;
 `
 export const VideoList = Styled.div` 
 background-color: ${props => (props.isDark ? '#0f0f0f' : '#f9f9f9')} ;
 color:${props => (!props.isDark ? '#0f0f0f ' : ' #f9f9f9 ')} ;
-transition: 1s;
+// transition: 1s;
 `
 
-export const NoVideosSaved = Styled.div`
-background-color: ${props => (props.isDark ? '#0f0f0f ' : ' #f9f9f9')} ;
-color:${props => (!props.isDark ? '#0f0f0f ' : ' #f9f9f9 ')} ;
-transition: 1s;
+// export const NoVideosSaved = Styled.div`
+// background-color: ${props => (props.isDark ? '#0f0f0f ' : ' #f9f9f9')} ;
+// color:${props => (!props.isDark ? '#0f0f0f ' : ' #f9f9f9 ')} ;
+// // transition: 1s;
 
-`
+// `
 export const CustomIcon = Styled.div`
 background-color: ${props => (props.isDark ? '#000000' : '#cbd5e1')} ;
-transition: 200ms;
+// transition: 200ms;
 // color:${props => (!props.isDark ? '#0f0f0f ' : ' #f9f9f9 ')} ;
 `
 export const HeadingDiv = Styled.div`
 background-color: ${props => (props.isDark ? '#424242' : '#ebebeb')} ;
 color:${props => (!props.isDark ? '#0f0f0f ' : ' #f9f9f9 ')} ;
-transition: 300ms;
+// transition: 300ms;
 `
 export const ChangeThemeVideoSection = Styled.div`
 background-color: ${props => (props.isDark ? ' #181818' : ' #f9f9f9')} ;
 color:${props => (!props.isDark ? '#0f0f0f ' : ' #f9f9f9 ')} ;
-transition: 800ms;
+// transition: 800ms;
 `
 // background-color: ${props =>
 //   props.isDark
@@ -60,8 +60,8 @@ color:${props => (!props.isDark ? '#0f0f0f ' : ' #f9f9f9 ')} ;
 margin:0;
 `
 export const LoginInputs = Styled.input`
-background-color: ${props => (props.isDark ? '#181818' : '#f9f9f9')} ;
-color:${props => (!props.isDark ? '#0f0f0f ' : ' #f9f9f9 ')} ;
+background-color: ${props => (props.isDark ? '#181818' : '#ffffff')} ;
+color:'#ffffff';
 outline:none;
 cursor:pointer;
 

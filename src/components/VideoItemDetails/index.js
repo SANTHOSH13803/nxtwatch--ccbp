@@ -112,7 +112,7 @@ class VideoPlayDetails extends Component {
               <ReactPlayer
                 url={videoUrl}
                 //   light={thumbnailUrl}
-                //   controls
+                controls
                 //   progressInterval={`${12}`}
                 width="100%"
                 height="100%"
@@ -242,7 +242,6 @@ class VideoPlayDetails extends Component {
                 <VideoList
                   isDark={isDarkMode}
                   className="video-item-details-container"
-                  data-testid="videoItemDetails"
                 >
                   {this.onRenderResult()}
                 </VideoList>

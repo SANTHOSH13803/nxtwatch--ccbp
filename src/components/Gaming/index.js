@@ -92,13 +92,17 @@ class GamingSection extends Component {
         const {gamesList} = this.state
         return (
           <>
-            <HeadingDiv isDark={isDarkMode} className="h-heading">
+            <HeadingDiv
+              isDark={isDarkMode}
+              className="h-heading"
+              data-testid="banner"
+            >
               <CustomIcon isDark={isDarkMode} className="custom-icon">
                 <SiYoutubegaming className="red-icon" />
               </CustomIcon>
               <h1>Gaming</h1>
             </HeadingDiv>
-            <VideoList isDark={isDarkMode} className="gaming-videos">
+            <div className="gaming-videos">
               <ul className="game-list-ul">
                 {gamesList.map(each => {
                   const {id, title, thumbnailUrl, viewCount} = each
@@ -116,7 +120,7 @@ class GamingSection extends Component {
                   )
                 })}
               </ul>
-            </VideoList>
+            </div>
           </>
         )
       }}
@@ -144,11 +148,17 @@ class GamingSection extends Component {
         {value => {
           const {isDarkMode} = value
           return (
-            <VideoList isDark={isDarkMode} data-testid="gaming">
+            <VideoList isDark={isDarkMode}>
               <Header />
               <div className="result-container">
                 <FilterSection activeTab="Gaming" />
-                <div className="width-100">{this.renderResult()}</div>
+                <VideoList
+                  isDark={isDarkMode}
+                  className="v-section"
+                  data-testid="gaming"
+                >
+                  {this.renderResult()}
+                </VideoList>
               </div>
             </VideoList>
           )

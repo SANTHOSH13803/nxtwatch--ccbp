@@ -7,7 +7,7 @@ import Home from './components/Home'
 // import HomeVideoSection from './components/Videos'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
 import ThemeContext from './Context/context'
-import {ChangeTheme} from './components/StyledComponents/styledComponents'
+import {ChangeThemeVideoSection} from './components/StyledComponents/styledComponents'
 import VideoPlayDetails from './components/VideoItemDetails'
 import TrendingSection from './components/TrendingSection'
 import GamingSection from './components/Gaming'
@@ -33,7 +33,7 @@ class App extends Component {
   render() {
     const {isDarkMode, cartList} = this.state
     return (
-      <ChangeTheme isDark={isDarkMode}>
+      <ChangeThemeVideoSection isDark={isDarkMode}>
         <ThemeContext.Provider
           value={{
             isDarkMode,
@@ -61,11 +61,11 @@ class App extends Component {
               path="/videos/:id"
               component={VideoPlayDetails}
             />
-            <Route exact path="/bad-path" component={NotFound} />
+            <Route path="/bad-path" component={NotFound} />
             <Redirect to="/bad-path" />
           </Switch>
         </ThemeContext.Provider>
-      </ChangeTheme>
+      </ChangeThemeVideoSection>
     )
   }
 }

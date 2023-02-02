@@ -16,19 +16,15 @@ class Home extends Component {
         {value => {
           const {isDarkMode} = value
           return (
-            <div>
+            <ChangeThemeVideoSection isDark={isDarkMode}>
               <Header />
               <div className="result-container">
                 <FilterSection activeTab="Home" />
-                <ChangeThemeVideoSection
-                  className="display-according-section"
-                  isDark={isDarkMode}
-                  data-testid="home"
-                >
+                <div className="display-according-section">
                   <HomeVideoSection />
-                </ChangeThemeVideoSection>
+                </div>
               </div>
-            </div>
+            </ChangeThemeVideoSection>
           )
         }}
       </ThemeContext.Consumer>

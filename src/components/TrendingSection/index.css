@@ -5,6 +5,7 @@
   padding: 20px;
   display: flex;
   align-items: center;
+  width: 100vw;
 }
 .error-page-button-align {
   display: flex;

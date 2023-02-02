@@ -10,6 +10,7 @@
   border-radius: 5px;
   margin: 20px 0px;
 }
+
 .search-bar-cont button {
   height: 30px;
   background-color: #f1f1f1;
@@ -90,5 +91,10 @@
   display: flex;
   padding: 0;
   flex-wrap: wrap;
+  max-height: 100vh;
+  overflow-y: scroll;
   /* background-color: orange; */
+}
+.v-section::-webkit-scrollbar {
+  display: none;
 }

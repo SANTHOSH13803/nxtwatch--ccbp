@@ -2,7 +2,7 @@ import './index.css'
 import {AiFillHome, AiFillFire} from 'react-icons/ai'
 import {SiYoutubegaming} from 'react-icons/si'
 // import {Component} from 'react'
-import uuid from 'react-uuid'
+// import {v4} from 'react-uuid'
 import {MdPlaylistAdd} from 'react-icons/md'
 import {Link} from 'react-router-dom'
 import ThemeContext from '../../Context/context'
@@ -50,18 +50,18 @@ const FilterSection = p => {
   const {activeTab} = p
   const renderContactSection = () => (
     <div className="contact-section">
-      <h1>CONTACT US</h1>
+      <p>CONTACT US</p>
       <ul>
         {contactIconDetails.map(each => {
           const {imageUrl, altText} = each
           return (
-            <li key={uuid()}>
+            <li key={altText}>
               <img src={imageUrl} alt={altText} />
             </li>
           )
         })}
       </ul>
-      <p>Enjoy Now to see your channels and recommendations!</p>
+      <p>Enjoy! Now to see your channels and recommendations!</p>
     </div>
   )
 
@@ -71,86 +71,86 @@ const FilterSection = p => {
         const {isDarkMode} = value
         return (
           <ul className="filter-top">
-            <Link to="/" className="link" key={uuid()}>
-              <ActiveItem
-                key={uuid()}
+            <ActiveItem
+              key="HOME"
+              isActive={filterIcons[0].id === activeTab}
+              isDark={isDarkMode}
+            >
+              <ActiveIcon
+                isDark={isDarkMode}
                 isActive={filterIcons[0].id === activeTab}
-                isDark={isDarkMode}
               >
-                <ActiveIcon
-                  isDark={isDarkMode}
-                  isActive={filterIcons[0].id === activeTab}
-                >
-                  <AiFillHome className="filter-icon" />
-                </ActiveIcon>
-                <ActiveText
-                  isDark={isDarkMode}
-                  isActive={filterIcons[0].id === activeTab}
-                >
-                  {filterIcons[0].id}
-                </ActiveText>
-              </ActiveItem>
-            </Link>
-            <Link to="/trending" className="link" key={uuid()}>
-              <ActiveItem
-                key={uuid()}
+                <AiFillHome className="filter-icon" />
+              </ActiveIcon>
+              <ActiveText
+                isDark={isDarkMode}
+                isActive={filterIcons[0].id === activeTab}
+              >
+                <Link to="/" className="link">
+                  Home
+                </Link>
+              </ActiveText>
+            </ActiveItem>
+            <ActiveItem
+              isActive={filterIcons[1].id === activeTab}
+              isDark={isDarkMode}
+              key="TRENDING"
+            >
+              <ActiveIcon
+                isDark={isDarkMode}
                 isActive={filterIcons[1].id === activeTab}
-                isDark={isDarkMode}
               >
-                <ActiveIcon
-                  isDark={isDarkMode}
-                  isActive={filterIcons[1].id === activeTab}
-                >
-                  <AiFillFire className="filter-icon" />
-                </ActiveIcon>
-                <ActiveText
-                  isDark={isDarkMode}
-                  isActive={filterIcons[1].id === activeTab}
-                >
-                  {filterIcons[1].id}
-                </ActiveText>
-              </ActiveItem>
-            </Link>
-            <Link to="/gaming" className="link" key={uuid()}>
-              <ActiveItem
-                key={uuid()}
+                <AiFillFire className="filter-icon" />
+              </ActiveIcon>
+              <ActiveText
+                isDark={isDarkMode}
+                isActive={filterIcons[1].id === activeTab}
+              >
+                <Link to="/trending" className="link">
+                  Trending
+                </Link>
+              </ActiveText>
+            </ActiveItem>
+            <ActiveItem
+              isActive={filterIcons[2].id === activeTab}
+              isDark={isDarkMode}
+              key="GAMING"
+            >
+              <ActiveIcon
+                isDark={isDarkMode}
                 isActive={filterIcons[2].id === activeTab}
-                isDark={isDarkMode}
               >
-                <ActiveIcon
-                  isDark={isDarkMode}
-                  isActive={filterIcons[2].id === activeTab}
-                >
-                  <SiYoutubegaming className="filter-icon" />
-                </ActiveIcon>
+                <SiYoutubegaming className="filter-icon" />
+              </ActiveIcon>
+              <Link to="/gaming" className="link">
                 <ActiveText
                   isDark={isDarkMode}
                   isActive={filterIcons[2].id === activeTab}
                 >
                   {filterIcons[2].id}
                 </ActiveText>
-              </ActiveItem>
-            </Link>
-            <Link to="/saved-videos" className="link" key={uuid()}>
-              <ActiveItem
-                key={uuid()}
-                isActive={filterIcons[3].id === activeTab}
+              </Link>
+            </ActiveItem>
+            <ActiveItem
+              isActive={filterIcons[3].id === activeTab}
+              isDark={isDarkMode}
+              key="SAVED-VIDEOS"
+            >
+              <ActiveIcon
                 isDark={isDarkMode}
+                isActive={filterIcons[3].id === activeTab}
               >
-                <ActiveIcon
-                  isDark={isDarkMode}
-                  isActive={filterIcons[3].id === activeTab}
-                >
-                  <MdPlaylistAdd className="filter-icon" />
-                </ActiveIcon>
+                <MdPlaylistAdd className="filter-icon" />
+              </ActiveIcon>
+              <Link to="/saved-videos" className="link">
                 <ActiveText
                   isDark={isDarkMode}
                   isActive={filterIcons[3].id === activeTab}
                 >
                   {filterIcons[3].id}
                 </ActiveText>
-              </ActiveItem>
-            </Link>
+              </Link>
+            </ActiveItem>
           </ul>
         )
       }}

@@ -55,7 +55,7 @@ class TrendingSection extends Component {
         viewCount: each.view_count,
         publishedAt: each.published_at,
       }))
-      console.log(updatedData)
+
       this.setState({
         trendingList: updatedData,
         apiStatus: StatusVariables.success,
@@ -100,7 +100,11 @@ class TrendingSection extends Component {
         const {trendingList} = this.state
         return (
           <>
-            <HeadingDiv isDark={isDarkMode} className="h-heading">
+            <HeadingDiv
+              isDark={isDarkMode}
+              className="h-heading"
+              data-testid="banner"
+            >
               <CustomIcon isDark={isDarkMode} className="custom-icon">
                 <AiFillFire className="red-icon" />
               </CustomIcon>

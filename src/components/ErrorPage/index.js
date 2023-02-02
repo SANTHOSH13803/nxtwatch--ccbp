@@ -17,8 +17,7 @@ const ErrorPage = () => (
           <h1>Oops! Something Went Wrong</h1>
           <p>
             We are having some trouble to complete your request.
-            <br />
-            Please try again.
+            <br /> Please try again.
           </p>
         </div>
       )

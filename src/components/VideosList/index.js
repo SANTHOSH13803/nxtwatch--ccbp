@@ -31,7 +31,7 @@ const VideosList = props => {
                   .replace('over', '')
                 publishedAgo += ' ago'
                 return (
-                  <Link to={`/videos/${id}`} className="link" key={id}>
+                  <Link to={`/videos/${id}`} className="link" key={title}>
                     <li className="list-item" key={id}>
                       <img
                         src={thumbnailUrl}

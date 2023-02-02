@@ -16,7 +16,7 @@ const VideoItem = props => {
   return (
     <li className="home-video">
       <Link to={`/videos/${id}`} className="link">
-        <img src={thumbnailUrl} alt={title} className="video-logo" />
+        <img src={thumbnailUrl} alt="video thumbnail" className="video-logo" />
         <div className="video-flex">
           <img
             src={channel.profile_image_url}

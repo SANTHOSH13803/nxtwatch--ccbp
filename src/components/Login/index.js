@@ -2,7 +2,12 @@ import './index.css'
 import {Component} from 'react'
 import {Redirect} from 'react-router-dom'
 import Cookies from 'js-cookie'
-import {LoginInputs, Para, Label} from '../StyledComponents/styledComponents'
+import {
+  LoginInputs,
+  Para,
+  Label,
+  VideoList,
+} from '../StyledComponents/styledComponents'
 import ThemeContext from '../../Context/context'
 
 const lightThemeImage =
@@ -72,16 +77,17 @@ class Login extends Component {
           const {isDarkMode} = value
           const websiteLogo = !isDarkMode ? lightThemeImage : darkThemeImage
           return (
-            <div className="login-container">
+            <VideoList isDark={isDarkMode} className="login-container">
               <form
                 className="login-form-container"
                 onSubmit={this.onSubmitClicked}
               >
                 <img src={websiteLogo} alt="website logo" />
                 <div className="login-input-container">
-                  <Label isDark={isDarkMode} htmlFor="username">
+                  <Label isDark={isDarkMode} htmlFor="username" type="text">
                     USERNAME
                   </Label>
+
                   <br />
                   <LoginInputs
                     type="text"
@@ -117,7 +123,7 @@ class Login extends Component {
                 </button>
                 {error && <p className="error-msg">*{errorMsg}</p>}
               </form>
-            </div>
+            </VideoList>
           )
         }}
       </ThemeContext.Consumer>
